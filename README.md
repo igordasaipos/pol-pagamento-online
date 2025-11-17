@@ -1,73 +1,61 @@
-# React + TypeScript + Vite
+# POL - Pagamento Online
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Implementação da interface de configuração de Pagamento Online (POL) baseada no design do Figma para o sistema Saipos.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 19** - Biblioteca JavaScript para construção de interfaces
+- **TypeScript** - Superset do JavaScript com tipagem estática
+- **Vite** - Build tool e dev server rápido
+- **Tailwind CSS** - Framework CSS utility-first
+- **Bun** - Runtime e gerenciador de pacotes rápido
 
-## React Compiler
+## 📦 Instalação
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+# Instalar dependências
+bun install
 
-## Expanding the ESLint configuration
+# Iniciar servidor de desenvolvimento
+bun run dev
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# Build para produção
+bun run build
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Preview do build de produção
+bun run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎨 Design
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Este projeto foi implementado a partir do design do Figma:
+- [Design Original](https://www.figma.com/design/5ZU6rR9LsBdevuRXJPQOHu/POL-iFood-Pago?node-id=1946-756)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 📁 Estrutura do Projeto
+
 ```
+src/
+├── components/
+│   ├── Header.tsx    # Componente do cabeçalho
+│   └── POL.tsx       # Componente principal da página POL
+├── App.tsx           # Componente raiz
+├── main.tsx          # Ponto de entrada
+└── index.css         # Estilos globais com Tailwind
+```
+
+## 🎯 Funcionalidades
+
+- Interface de configuração de pagamento online
+- Barra de progresso (33% finalizado)
+- Integração com iFood Pago
+- Design responsivo
+- Componentes reutilizáveis
+
+## 📝 Notas
+
+- As imagens estão sendo carregadas diretamente do Figma API e expiram em 7 dias
+- Para produção, recomenda-se fazer download das imagens e hospedá-las localmente
+
+## 🔧 Desenvolvimento
+
+O servidor de desenvolvimento roda em `http://localhost:5173` por padrão.
